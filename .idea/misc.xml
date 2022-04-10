@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android/CityApplication/app/src/main/res/layout-land/activity_cities.xml" value="0.1625" />
         <entry key="..\:/android/CityApplication/app/src/main/res/layout/activity_cities.xml" value="0.22083333333333333" />
         <entry key="..\:/android/CityApplication/app/src/main/res/layout/fragment_cities.xml" value="0.22083333333333333" />
+        <entry key="..\:/android/CityApplication/app/src/main/res/layout/fragment_coat_of_arms.xml" value="0.22083333333333333" />
       </map>
     </option>
   </component>
