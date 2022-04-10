@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CityApplication">
         <activity
-            android:name="com.naz.citiesapplication.CitiesActivity"
+            android:name=".CoatOfArmsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CitiesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

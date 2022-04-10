@@ -1,5 +1,7 @@
 package com.naz.citiesapplication;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import static com.naz.citiesapplication.CoatOfArmsFragment.ARG_INDEX;
 
 public class CitiesFragment extends Fragment {
 
@@ -73,23 +76,17 @@ public class CitiesFragment extends Fragment {
         }
     }
 
-    // Показываем герб в портретной ориентации
-    private void showPortCoatOfArms(int index) {
-        CoatOfArmsFragment coatOfArmsFragment =
-                CoatOfArmsFragment.newInstance(index);
-        FragmentManager fragmentManager =
-                requireActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction =
-                fragmentManager.beginTransaction();
-        // добавляем фрагмент через add
-        fragmentTransaction.add(R.id.fragment_container, coatOfArmsFragment);
-        fragmentTransaction.addToBackStack("");
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        fragmentTransaction.commit();
-    }
+        // Показываем герб в портретной ориентации
+        private void showPortCoatOfArms (int index){
+            Activity activity = requireActivity();
+            final Intent intent = new Intent(activity, CoatOfArmsActivity.class);
+            intent.putExtra(ARG_INDEX, index);
+            activity.startActivity(intent);
+        }
 
 
-    // Показываем герб в ландшафтной ориентации
+
+        // Показываем герб в ландшафтной ориентации
     private void showLandCoatOfArms(int index) {
 // Создаём новый фрагмент с текущей позицией для вывода герба
         CoatOfArmsFragment detail = CoatOfArmsFragment.newInstance(index);
